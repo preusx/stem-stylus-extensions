@@ -1,0 +1,113 @@
+// @describe Reassign
+
+// @it Global variable reassign : Unit, Literal, String, RGBA, Hash, List
+
+$hash = {hash: true}
+$variable = 6px
+$list = 1, 2, 3, 4, 5
+
+ra($var, $some)
+    reassign($var, $some)
+
+for $i in (1px 'string' _some_leteral #000 $hash (1 4 'pp') $list)
+    ra('$variable', $i)
+
+    body
+        if is_hash($variable)
+            {$variable}
+        else
+            variable: $variable
+
+// @expects
+body{variable:1px}
+body{variable:'string'}
+body{variable:_some_leteral}
+body{variable:#000}
+body{hash:true}
+body{variable:1 4 'pp'}
+body{variable:1,2,3,4,5}
+
+
+// @it Nearest scope variable reassign and lookup : Unit, Literal, String, RGBA, Hash, List
+
+$variable = 6px
+$list = 1, 2, 3, 4, 5
+
+ra($var, $some)
+    assign($var, $some, true)
+
+body
+    $hash = {hash: true}
+    ra('$variable', $hash)
+
+    for $i in (1px 'string' _some_leteral #000 $hash (1 4 'pp') $list)
+
+        .block
+            ra('$variable', $i)
+            $v = lookup('$variable')
+
+            if is_hash($v)
+                {$v}
+            else
+                variable: $v
+
+    $v = lookup('$variable')
+    {$v}
+
+.block
+    variable lookup('$variable')
+
+// @expects
+body{hash:true}
+body .block{variable:1px}
+body .block{variable:'string'}
+body .block{variable:_some_leteral}
+body .block{variable:#000}
+body .block{hash:true}
+body .block{variable:1 4 'pp'}
+body .block{variable:1,2,3,4,5}
+.block{variable:6px}
+
+
+// @it Specified paternity scope variable reassign and lookup : Unit, Literal, String, RGBA, Hash, List
+
+$variable = 6px
+$list = 1, 2, 3, 4, 5
+
+ra($var, $some)
+    mx()
+        assign($var, $some, 2)
+
+    mx()
+
+body
+    $hash = {hash: true}
+    ra('$variable', $hash)
+
+    for $i in (1px 'string' _some_leteral #000 $hash (1 4 'pp') $list)
+
+        .block
+            ra('$variable', $i)
+            $v = lookup('$variable')
+
+            if is_hash($v)
+                {$v}
+            else
+                variable: $v
+
+    $v = lookup('$variable')
+    {$v}
+
+.block
+    variable lookup('$variable')
+
+// @expects
+body{hash:true}
+body .block{variable:1px}
+body .block{variable:'string'}
+body .block{variable:_some_leteral}
+body .block{variable:#000}
+body .block{hash:true}
+body .block{variable:1 4 'pp'}
+body .block{variable:1,2,3,4,5}
+.block{variable:6px}

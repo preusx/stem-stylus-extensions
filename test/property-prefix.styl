@@ -1,0 +1,38 @@
+// @describe Property prefix `@p`
+
+// @it Simple properties
+.body
+    @p font
+        size 10px
+        family arial
+
+    @p background
+        color #000
+        repeat no-repeat
+
+// @expects
+.body{font-size:10px;font-family:arial;background-color:#000;background-repeat:no-repeat}
+
+// @it Multisegment properties
+.body
+    @p some-prefix
+        color #000
+        size 10px
+
+// @expects
+.body{some-prefix-color:#000;some-prefix-size:10px}
+
+// @it Variable evaluation
+.body
+    $prop = 'font'
+
+    @p {$prop}
+        size 10px
+        family arial
+
+    @p prefix-{$prop}
+        size 10px
+        family arial
+
+// @expects
+.body{font-size:10px;font-family:arial;prefix-font-size:10px;prefix-font-family:arial}

@@ -1,0 +1,141 @@
+// @describe Type
+
+// @it Unit
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit to_literal (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_unit($i)
+        body
+            {$i} $i
+
+// @expects
+body { 1: 1; }
+body { 1: 1px; }
+
+
+// @it String
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit to_literal (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_string($i)
+        body
+            {$i} $i
+
+// @expects
+body { 1: '1'; }
+body { string: 'string'; }
+
+
+// @it Ident
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_ident($i)
+        body
+            {$i} $i
+
+// @expects
+body { lit: lit; }
+
+
+// @it Funtion
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_function (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_function($i)
+        body
+            function $i
+
+// @expects
+body{function:is_function}
+
+
+// @it List
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_list($i)
+        body
+            array $i
+
+// @expects
+body{array:array 'array'}
+body{array:item,second,'string stuff'}
+
+
+// @it Hash
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_hash($i)
+        body
+            {$i}
+
+// @expects
+body{hash: true}
+
+
+// @it Boolean
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_boolean($i)
+        body
+            bool $i
+
+// @expects
+body{bool: true}
+
+
+// @it Color
+hash = {
+    hash: true
+}
+
+comma_list = item, second, 'string stuff'
+
+for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+        true #000 rgba(#00f, .5) hsla(1,20,39, .5))
+    if is_color($i)
+        body
+            color $i
+
+// @expects
+body{color:#000}
+body{color:rgba(0,0,255,.5)}
+body{color:rgba(119,80,80,.5)}
