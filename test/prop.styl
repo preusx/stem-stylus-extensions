@@ -1,0 +1,94 @@
+// @describe Prop
+
+
+// @it Property value :: Simple
+
+.button
+    padding 10px 20px
+
+    margin-right prop('padding')[1]
+
+// @expects
+
+.button{padding:10px 20px;margin-right:20px}
+
+
+
+// @it Property value :: Mixin body
+
+mx()
+    margin-right prop('padding-left')
+
+.button
+    padding-left 10px
+
+    mx()
+
+// @expects
+
+.button{padding-left:10px;margin-right:10px}
+
+
+
+// @it Current property value
+
+.button
+    color #000
+
+    border-color prop-current('color')
+    padding prop-current('margin')
+
+    &__element
+        border-radius 3px
+        background-color prop-current('color')
+
+// @expects
+
+.button{color:#000;border-color:#000}.button__element{border-radius:3px}
+
+
+
+// @it Value of the property part :: Right padding from `padding` property
+
+.button
+    padding 10px 20px
+    // padding-right 100px
+
+    margin-right prop-partial('padding-right')
+
+// @expects
+
+.button{padding:10px 20px;margin-right:20px}
+
+
+
+// @it Value of the property part :: Border parts
+
+.button
+    border 10px solid #000
+    border-left 12px solid #eee
+
+    margin-right prop-partial('border-left-width')
+    margin-bottom prop-partial('border-width')
+    color prop-partial('border-color')
+    background-color prop-partial('border-left-color')
+
+// @expects
+
+.button{border:10px solid #000;border-left:12px solid #eee;margin-right:12px;margin-bottom:10px;color:#000;background-color:#eee}
+
+
+
+// @it Value of the property part :: Mixin body
+
+mx()
+    margin-right prop-partial('border-left-width')
+
+.button
+    border 10px solid #000
+
+    mx()
+
+// @expects
+
+.button{border:10px solid #000;margin-right:10px}

@@ -1,20 +1,20 @@
-// @describe Convert
+// @describe To
 
-// @it to_unit
+// @it to-unit
 test
-    for $i in (20em 20cm 20in 20pt 20px 20rem 20 20ex 20% 20ch 20mm 20pc 20vh)
+    for $i in (20em 20cm 20in 20pt 20px 20rem 20 20ex 20% 20ch 20mm 20pc)
         for $j in ('em' 'cm' 'in' 'pt' 'px' 'rem' 'ex' '%' 'ch' 'mm' 'pc')
             f unit($i) to $j
-            c $i to $j equals to_unit($i, $j)
+            c $i to $j equals to-unit($i, $j)
 
 // @expects
 test{
     f:'em' to 'em';
     c:20em to 'em' equals 20em;
     f:'em' to 'cm';
-    c:20em to 'cm' equals 11.288888888888888cm;
+    c:20em to 'cm' equals 8.466666666666667cm;
     f:'em' to 'in';
-    c:20em to 'in' equals 4.444444444444445in;
+    c:20em to 'in' equals 3.333333333333333in;
     f:'em' to 'pt';
     c:20em to 'pt' equals 240pt;
     f:'em' to 'px';
@@ -28,59 +28,59 @@ test{
     f:'em' to 'ch';
     c:20em to 'ch' equals 33.333333333333336ch;
     f:'em' to 'mm';
-    c:20em to 'mm' equals 112.88888888888889mm;
+    c:20em to 'mm' equals 84.66666666666667mm;
     f:'em' to 'pc';
     c:20em to 'pc' equals 20pc;
     f:'cm' to 'em';
-    c:20cm to 'em' equals 35.43307086614173em;
+    c:20cm to 'em' equals 47.24409448818898em;
     f:'cm' to 'cm';
     c:20cm to 'cm' equals 20cm;
     f:'cm' to 'in';
     c:20cm to 'in' equals 7.874015748031496in;
     f:'cm' to 'pt';
-    c:20cm to 'pt' equals 425.1968503937008pt;
+    c:20cm to 'pt' equals 566.9291338582677pt;
     f:'cm' to 'px';
-    c:20cm to 'px' equals 566.93px;
+    c:20cm to 'px' equals 755.91px;
     f:'cm' to 'rem';
-    c:20cm to 'rem' equals 35.43307086614173rem;
+    c:20cm to 'rem' equals 47.24409448818898rem;
     f:'cm' to 'ex';
-    c:20cm to 'ex' equals 70.86614173228347ex;
+    c:20cm to 'ex' equals 94.48818897637796ex;
     f:'cm' to '%';
-    c:20cm to '%' equals 3543.3070866141734%;
+    c:20cm to '%' equals 4724.4094488188975%;
     f:'cm' to 'ch';
-    c:20cm to 'ch' equals 59.05511811023622ch;
+    c:20cm to 'ch' equals 78.74015748031496ch;
     f:'cm' to 'mm';
     c:20cm to 'mm' equals 200mm;
     f:'cm' to 'pc';
-    c:20cm to 'pc' equals 35.43307086614173pc;
+    c:20cm to 'pc' equals 47.24409448818898pc;
     f:'in' to 'em';
-    c:20in to 'em' equals 90em;
+    c:20in to 'em' equals 120em;
     f:'in' to 'cm';
-    c:20in to 'cm' equals 50.8cm;
+    c:20in to 'cm' equals 50.800000000000004cm;
     f:'in' to 'in';
     c:20in to 'in' equals 20in;
     f:'in' to 'pt';
-    c:20in to 'pt' equals 1080pt;
+    c:20in to 'pt' equals 1440pt;
     f:'in' to 'px';
-    c:20in to 'px' equals 1440px;
+    c:20in to 'px' equals 1920px;
     f:'in' to 'rem';
-    c:20in to 'rem' equals 90rem;
+    c:20in to 'rem' equals 120rem;
     f:'in' to 'ex';
-    c:20in to 'ex' equals 180ex;
+    c:20in to 'ex' equals 240ex;
     f:'in' to '%';
-    c:20in to '%' equals 9000%;
+    c:20in to '%' equals 12000%;
     f:'in' to 'ch';
-    c:20in to 'ch' equals 150ch;
+    c:20in to 'ch' equals 200ch;
     f:'in' to 'mm';
-    c:20in to 'mm' equals 508mm;
+    c:20in to 'mm' equals 508.00000000000006mm;
     f:'in' to 'pc';
-    c:20in to 'pc' equals 90pc;
+    c:20in to 'pc' equals 120pc;
     f:'pt' to 'em';
     c:20pt to 'em' equals 1.666666666666667em;
     f:'pt' to 'cm';
-    c:20pt to 'cm' equals .9407407407407408cm;
+    c:20pt to 'cm' equals .7055555555555556cm;
     f:'pt' to 'in';
-    c:20pt to 'in' equals .3703703703703704in;
+    c:20pt to 'in' equals .2777777777777778in;
     f:'pt' to 'pt';
     c:20pt to 'pt' equals 20pt;
     f:'pt' to 'px';
@@ -94,15 +94,15 @@ test{
     f:'pt' to 'ch';
     c:20pt to 'ch' equals 2.777777777777778ch;
     f:'pt' to 'mm';
-    c:20pt to 'mm' equals 9.407407407407408mm;
+    c:20pt to 'mm' equals 7.055555555555556mm;
     f:'pt' to 'pc';
     c:20pt to 'pc' equals 1.666666666666667pc;
     f:'px' to 'em';
     c:20px to 'em' equals 1.25em;
     f:'px' to 'cm';
-    c:20px to 'cm' equals .7055555555555555cm;
+    c:20px to 'cm' equals .5291666666666667cm;
     f:'px' to 'in';
-    c:20px to 'in' equals .2777777777777778in;
+    c:20px to 'in' equals .20833333333333334in;
     f:'px' to 'pt';
     c:20px to 'pt' equals 15pt;
     f:'px' to 'px';
@@ -116,15 +116,15 @@ test{
     f:'px' to 'ch';
     c:20px to 'ch' equals 2.083333333333333ch;
     f:'px' to 'mm';
-    c:20px to 'mm' equals 7.055555555555555mm;
+    c:20px to 'mm' equals 5.291666666666667mm;
     f:'px' to 'pc';
     c:20px to 'pc' equals 1.25pc;
     f:'rem' to 'em';
     c:20rem to 'em' equals 20em;
     f:'rem' to 'cm';
-    c:20rem to 'cm' equals 11.288888888888888cm;
+    c:20rem to 'cm' equals 8.466666666666667cm;
     f:'rem' to 'in';
-    c:20rem to 'in' equals 4.444444444444445in;
+    c:20rem to 'in' equals 3.333333333333333in;
     f:'rem' to 'pt';
     c:20rem to 'pt' equals 240pt;
     f:'rem' to 'px';
@@ -138,7 +138,7 @@ test{
     f:'rem' to 'ch';
     c:20rem to 'ch' equals 33.333333333333336ch;
     f:'rem' to 'mm';
-    c:20rem to 'mm' equals 112.88888888888889mm;
+    c:20rem to 'mm' equals 84.66666666666667mm;
     f:'rem' to 'pc';
     c:20rem to 'pc' equals 20pc;
     f:'' to 'em';
@@ -166,9 +166,9 @@ test{
     f:'ex' to 'em';
     c:20ex to 'em' equals 10em;
     f:'ex' to 'cm';
-    c:20ex to 'cm' equals 5.644444444444444cm;
+    c:20ex to 'cm' equals 4.233333333333333cm;
     f:'ex' to 'in';
-    c:20ex to 'in' equals 2.222222222222222in;
+    c:20ex to 'in' equals 1.666666666666667in;
     f:'ex' to 'pt';
     c:20ex to 'pt' equals 120pt;
     f:'ex' to 'px';
@@ -182,15 +182,15 @@ test{
     f:'ex' to 'ch';
     c:20ex to 'ch' equals 16.666666666666668ch;
     f:'ex' to 'mm';
-    c:20ex to 'mm' equals 56.44444444444444mm;
+    c:20ex to 'mm' equals 42.333333333333336mm;
     f:'ex' to 'pc';
     c:20ex to 'pc' equals 10pc;
     f:'%' to 'em';
     c:20% to 'em' equals 20em;
     f:'%' to 'cm';
-    c:20% to 'cm' equals 11.288888888888888cm;
+    c:20% to 'cm' equals 8.466666666666667cm;
     f:'%' to 'in';
-    c:20% to 'in' equals 4.444444444444445in;
+    c:20% to 'in' equals 3.333333333333333in;
     f:'%' to 'pt';
     c:20% to 'pt' equals 240pt;
     f:'%' to 'px';
@@ -204,15 +204,15 @@ test{
     f:'%' to 'ch';
     c:20% to 'ch' equals 33.333333333333336ch;
     f:'%' to 'mm';
-    c:20% to 'mm' equals 112.88888888888889mm;
+    c:20% to 'mm' equals 84.66666666666667mm;
     f:'%' to 'pc';
     c:20% to 'pc' equals 20pc;
     f:'ch' to 'em';
     c:20ch to 'em' equals 12em;
     f:'ch' to 'cm';
-    c:20ch to 'cm' equals 6.773333333333333cm;
+    c:20ch to 'cm' equals 5.08cm;
     f:'ch' to 'in';
-    c:20ch to 'in' equals 2.666666666666667in;
+    c:20ch to 'in' equals 2in;
     f:'ch' to 'pt';
     c:20ch to 'pt' equals 144pt;
     f:'ch' to 'px';
@@ -226,37 +226,37 @@ test{
     f:'ch' to 'ch';
     c:20ch to 'ch' equals 20ch;
     f:'ch' to 'mm';
-    c:20ch to 'mm' equals 67.73333333333333mm;
+    c:20ch to 'mm' equals 50.8mm;
     f:'ch' to 'pc';
     c:20ch to 'pc' equals 12pc;
     f:'mm' to 'em';
-    c:20mm to 'em' equals 3.543307086614173em;
+    c:20mm to 'em' equals 4.724409448818898em;
     f:'mm' to 'cm';
     c:20mm to 'cm' equals 2cm;
     f:'mm' to 'in';
-    c:20mm to 'in' equals .7874015748031495in;
+    c:20mm to 'in' equals .7874015748031497in;
     f:'mm' to 'pt';
-    c:20mm to 'pt' equals 42.51968503937008pt;
+    c:20mm to 'pt' equals 56.69291338582678pt;
     f:'mm' to 'px';
-    c:20mm to 'px' equals 56.69px;
+    c:20mm to 'px' equals 75.59px;
     f:'mm' to 'rem';
-    c:20mm to 'rem' equals 3.543307086614173rem;
+    c:20mm to 'rem' equals 4.724409448818898rem;
     f:'mm' to 'ex';
-    c:20mm to 'ex' equals 7.086614173228346ex;
+    c:20mm to 'ex' equals 9.448818897637796ex;
     f:'mm' to '%';
-    c:20mm to '%' equals 354.3307086614173%;
+    c:20mm to '%' equals 472.44094488188983%;
     f:'mm' to 'ch';
-    c:20mm to 'ch' equals 5.905511811023622ch;
+    c:20mm to 'ch' equals 7.874015748031497ch;
     f:'mm' to 'mm';
     c:20mm to 'mm' equals 20mm;
     f:'mm' to 'pc';
-    c:20mm to 'pc' equals 3.543307086614173pc;
+    c:20mm to 'pc' equals 4.724409448818898pc;
     f:'pc' to 'em';
     c:20pc to 'em' equals 20em;
     f:'pc' to 'cm';
-    c:20pc to 'cm' equals 11.288888888888888cm;
+    c:20pc to 'cm' equals 8.466666666666667cm;
     f:'pc' to 'in';
-    c:20pc to 'in' equals 4.444444444444445in;
+    c:20pc to 'in' equals 3.333333333333333in;
     f:'pc' to 'pt';
     c:20pc to 'pt' equals 240pt;
     f:'pc' to 'px';
@@ -270,29 +270,24 @@ test{
     f:'pc' to 'ch';
     c:20pc to 'ch' equals 33.333333333333336ch;
     f:'pc' to 'mm';
-    c:20pc to 'mm' equals 112.88888888888889mm;
+    c:20pc to 'mm' equals 84.66666666666667mm;
     f:'pc' to 'pc';
-    c:20pc to 'pc' equals 20pc;
-    f:'vh' to 'em';
-    c:20vh to 'em' equals 20vh;
-    f:'vh' to 'cm';
-    c:20vh to 'cm' equals 20vh;
-    f:'vh' to 'in';
-    c:20vh to 'in' equals 20vh;
-    f:'vh' to 'pt';
-    c:20vh to 'pt' equals 20vh;
-    f:'vh' to 'px';
-    c:20vh to 'px' equals 20vh;
-    f:'vh' to 'rem';
-    c:20vh to 'rem' equals 20vh;
-    f:'vh' to 'ex';
-    c:20vh to 'ex' equals 20vh;
-    f:'vh' to '%';
-    c:20vh to '%' equals 20vh;
-    f:'vh' to 'ch';
-    c:20vh to 'ch' equals 20vh;
-    f:'vh' to 'mm';
-    c:20vh to 'mm' equals 20vh;
-    f:'vh' to 'pc';
-    c:20vh to 'pc' equals 20vh
-}
+    c:20pc to 'pc' equals 20pc}
+
+
+// @it to-string
+body
+    some-string: '10px' == to-string(10px) ? true : false
+
+// @expects
+body{
+    some-string: true}
+
+
+// @it to-literal
+body
+    some-literal: ('%s' % 10px) == to-literal(10px) ? true : false
+
+// @expects
+body{
+    some-literal: true}

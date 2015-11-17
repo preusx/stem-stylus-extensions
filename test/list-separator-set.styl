@@ -1,0 +1,16 @@
+// @describe List separator setter
+
+// @it Comma list
+.body
+    some: list-separator-set((1 2 3 4 5), true)
+
+// @expects
+.body{some:1,2,3,4,5}
+
+// @it Tuple
+cm = 1,2,3,4,5,6
+.body
+    some: list-separator-set(cm, false)
+
+// @expects
+.body{some:1 2 3 4 5 6}

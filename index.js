@@ -1,14 +1,21 @@
 var plugin = function(){
   return function(style){
     require('./lib/loader.js')(style, [
-      'mixins/strings', 'mixins/regexp', 'mixins/math', 'mixins/byteOperations',
+      'at-rules/property-prefix',
 
-      'mixins/timer', 'mixins/type', 'mixins/convert', 'mixins/reassign',
-      'mixins/listSeparator',
+      'functions/timer',
 
-      'mixins/atProperty', 'mixins/atCurrent', 'mixins/atPartial',
+      'functions/str',
+      'functions/math',
 
-      'atRules/propertyPrefix',
+      'functions/type',
+      'functions/to',
+      'functions/reassign',
+      'functions/assign',
+      'functions/var',
+      'functions/list-separator-set',
+
+      'functions/prop',
     ]);
   };
 };

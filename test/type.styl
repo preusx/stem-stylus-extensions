@@ -9,7 +9,7 @@ comma_list = item, second, 'string stuff'
 
 for $i in (1 '1' 1px 'string' lit to_literal (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_unit($i)
+    if is-unit($i)
         body
             {$i} $i
 
@@ -27,7 +27,7 @@ comma_list = item, second, 'string stuff'
 
 for $i in (1 '1' 1px 'string' lit to_literal (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_string($i)
+    if is-string($i)
         body
             {$i} $i
 
@@ -43,9 +43,9 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-ident (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_ident($i)
+    if is-ident($i)
         body
             {$i} $i
 
@@ -60,14 +60,14 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_function (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-function (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_function($i)
+    if is-function($i)
         body
             function $i
 
 // @expects
-body{function:is_function}
+body{function:is-function}
 
 
 // @it List
@@ -77,9 +77,9 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-ident (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_list($i)
+    if is-list($i)
         body
             array $i
 
@@ -95,9 +95,9 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-ident (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_hash($i)
+    if is-hash($i)
         body
             {$i}
 
@@ -112,9 +112,9 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-ident (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_boolean($i)
+    if is-boolean($i)
         body
             bool $i
 
@@ -129,9 +129,9 @@ hash = {
 
 comma_list = item, second, 'string stuff'
 
-for $i in (1 '1' 1px 'string' lit is_ident (array 'array') hash comma_list \
+for $i in (1 '1' 1px 'string' lit is-ident (array 'array') hash comma_list \
         true #000 rgba(#00f, .5) hsla(1,20,39, .5))
-    if is_color($i)
+    if is-color($i)
         body
             color $i
 
