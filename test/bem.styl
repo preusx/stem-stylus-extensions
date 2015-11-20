@@ -79,39 +79,3 @@
 .is-helper{color:#fff}
 .block.is-state{color:#ff0}
 .block.is-helper{color:#fff}
-
-
-// @it Configuration
-bem-config({
-        p: {
-            block: 'b'
-        }
-        s: {
-            prefix: '--'
-            modifer: '_'
-        }
-    })
-
-
-@b block
-    @s state
-        color #ff0
-
-    @e element
-        color #000
-
-        @m mod
-            color #fff
-
-    @e
-        &element
-            color #fff
-
-    @m
-        &mod
-            color #fff
-
-@u util
-    color #ff0
-
-// @expects
