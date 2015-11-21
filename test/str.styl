@@ -1,0 +1,16 @@
+// @describe Str functions
+
+// @it Split
+.body
+    f: str-split('1 2 3 4 5 6 7', '\W')
+
+// @expects
+.body{f:'1' '2' '3' '4' '5' '6' '7'}
+
+
+// @it Replace
+.body
+    some: str-replace('1 2 3 4 5 6', '3', '7')
+
+// @expects
+.body{some:'1 2 7 4 5 6'}

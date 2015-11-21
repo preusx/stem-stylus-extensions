@@ -1,0 +1,81 @@
+// @describe BEM
+
+// @it Block
+
+@b block
+    color #000
+
+@b
+    &block
+        color #000
+
+// @expects
+.block{color:#000}
+.block{color:#000}
+
+
+// @it Element
+
+@b block
+    @e element
+        color #000
+
+    @e
+        &element
+            color #fff
+
+// @expects
+.block__element{color:#000}
+.block__element{color:#fff}
+
+
+// @it Modifer
+
+@b block
+    @e element
+        @m mod
+            color #fff
+
+    @m
+        &mod
+            color #fff
+
+// @expects
+.block__element--mod{color:#fff}
+.block--mod{color:#fff}
+
+
+// @it Utility
+@u util
+    color #ff0
+
+@u
+    &helper
+        color #fff
+
+// @expects
+.u-util{color:#ff0}
+.u-helper{color:#fff}
+
+
+// @it State
+@s state
+    color #ff0
+
+@s
+    &helper
+        color #fff
+
+@b block
+    @s state
+        color #ff0
+
+    @s
+        &helper
+            color #fff
+
+// @expects
+.is-state{color:#ff0}
+.is-helper{color:#fff}
+.block.is-state{color:#ff0}
+.block.is-helper{color:#fff}

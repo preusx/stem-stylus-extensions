@@ -1,0 +1,40 @@
+// @describe Math
+
+// @it Byte or
+.body
+    some: byte-or(10, 9)
+
+// @expects
+.body{some:11}
+
+
+// @it Byte and
+.body
+    some: byte-and(10, 6)
+
+// @expects
+.body{some:2}
+
+
+// @it GCD
+.body
+    some: math-gcd(150, 18)
+
+// @expects
+.body{some:6}
+
+
+// @it LCM
+.body
+    some: math-lcm(38, 24)
+
+// @expects
+.body{some:456}
+
+
+// @it Math simple fraction
+.body
+    some: math-simple-fraction(1 / 4)
+
+// @expects
+.body{some:1 4}
