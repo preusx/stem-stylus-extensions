@@ -1,0 +1,55 @@
+/**
+ * Mixins
+ * ======================================================================== */
+
+font-face(name, path, type='regular', formats=('woff'))
+    source = (null)
+    font_weight = 400
+    font_style = normal
+    path = Path.font + path
+
+    if match('italic', type)
+        font_style = italic
+
+    if match('bold', type)
+        font_weight = 700
+
+    if match('light', type)
+        font_weight = 300
+
+    // Gathering the src value
+    if 'otf' in formats
+        push(source, "url('" + path +\
+            "/" + type + ".otf') format('opentype')")
+
+    if 'ttf' in formats
+        push(source, "url('" + path +\
+            "/" + type + ".ttf') format('truetype')")
+
+    if 'svg' in formats
+        push(source, "url('" + path +\
+            "/" + type + ".svg#svg" + name + "') format('svg')")
+
+    if 'woff' in formats
+        push(source, "url('" + path +\
+            "/" + type + ".woff') format('woff')")
+
+    if 'woff2' in formats
+        push(source, "url('" + path +\
+            "/" + type + ".woff2') format('woff2')")
+
+    shift(source)
+
+    if 'eot' in formats
+        @font-face
+            font-family name
+            src url(path + '/' + type + '.eot?') format('embedded-opentype')
+            font-weight font_weight
+            font-style font_style
+
+    if source
+        @font-face
+            font-family name
+            src local(name), unquote(join(',', source))
+            font-weight font_weight
+            font-style font_style

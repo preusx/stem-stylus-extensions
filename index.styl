@@ -1,1 +1,12 @@
 use('index.js')
+
+@require 'lib/config'
+
+@require 'lib/mixins/alias'
+@require 'lib/mixins/properties'
+@require 'lib/mixins/reset'
+@require 'lib/mixins/font-face'
+@require 'lib/mixins/scale'
+
+if DEBUG
+    @import 'https://rawgit.com/yahoo/debugCSS/master/debugCSS.css';

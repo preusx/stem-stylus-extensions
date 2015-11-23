@@ -1,0 +1,96 @@
+// @describe Font face
+
+// @it Default
+
+font-face('Font', 'path')
+
+// @expects
+
+@font-face{font-family:Font;
+    src:local('Font'),url(../font/path/regular.woff) format('woff');
+    font-weight:400;
+    font-style:normal}
+
+
+// @it Font styles
+
+font-face('Font', 'path', 'bold')
+font-face('Font', 'path', 'italic-bold')
+font-face('Font', 'path', 'italic')
+font-face('Font', 'path', 'light')
+
+// @expects
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/bold.woff) format('woff');
+    font-weight:700;
+    font-style:normal}
+
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/italic-bold.woff) format('woff');
+    font-weight:700;
+    font-style:italic}
+
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/italic.woff) format('woff');
+    font-weight:400;
+    font-style:italic}
+
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/light.woff) format('woff');
+    font-weight:300;
+    font-style:normal}
+
+
+// @it Font types
+
+font-face('Font', 'path', 'light', ('eot'))
+font-face('Font', 'path', 'bold', ('eot' 'ttf' 'woff2'))
+font-face('Font', 'path', 'italic-bold', ('otf' 'woff'))
+font-face('Font', 'path', formats:('eot' 'ttf' 'woff2'))
+font-face('Font', 'path', formats:('otf' 'woff'))
+
+// @expects
+@font-face{font-family:Font;
+    src:url(../font/path/light.eot?) format('embedded-opentype');
+    font-weight:300;
+    font-style:normal}
+
+@font-face{font-family:Font;
+    src:url(../font/path/bold.eot?) format('embedded-opentype');
+    font-weight:700;
+    font-style:normal}
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/bold.ttf) format('truetype'),
+        url(../font/path/bold.woff2) format('woff2');
+    font-weight:700;
+    font-style:normal}
+
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/italic-bold.otf) format('opentype'),
+        url(../font/path/italic-bold.woff) format('woff');
+    font-weight:700;
+    font-style:italic}
+
+@font-face{font-family:Font;
+    src:url(../font/path/regular.eot?) format('embedded-opentype');
+    font-weight:400;
+    font-style:normal}
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/regular.ttf) format('truetype'),
+        url(../font/path/regular.woff2) format('woff2');
+    font-weight:400;
+    font-style:normal}
+
+@font-face{font-family:Font;
+    src:local('Font'),
+        url(../font/path/regular.otf) format('opentype'),
+        url(../font/path/regular.woff) format('woff');
+    font-weight:400;
+    font-style:normal}

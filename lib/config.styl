@@ -1,0 +1,25 @@
+/**
+ * Variables
+ * ======================================================================== */
+
+DEBUG           ?= false
+DPI             ?= 96
+DIRECTION       ?= ltr
+PI              ?= 3.141592653589793
+
+ie              ?= false
+
+Path            = extend({
+        font: '../font/'
+        img:  '../img/'
+    }, Path)
+
+Base            = extend({
+        font-size: 16px
+    }, Base)
+
+
+to-config({
+    DPI: DPI,
+    base: Base.font-size
+})

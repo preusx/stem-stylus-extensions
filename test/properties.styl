@@ -1,0 +1,125 @@
+// @describe Properties
+
+// @it Size
+body
+    lst = (10px 20px)
+
+    size: 10px
+    size: 10px 20px
+    size: lst
+
+// @expects
+body{width:10px;
+    height:10px;
+    width:10px;
+    height:20px;
+    width:10px;
+    height:20px}
+
+
+// @it Position
+body
+    absolute: 10px
+    relative: 10px _ 11px
+    fixed 10px _ _ 10px
+
+// @expects
+body{position:absolute;
+    top:10px;
+    position:relative;
+    top:10px;
+    bottom:11px;
+    position:fixed;
+    top:10px;
+    left:10px}
+
+
+// @it Overflow
+body
+    text-overflow: 200px ellipsis
+
+// @expects
+body{text-overflow:type;white-space:nowrap;overflow:hidden;width:200px}
+
+
+// @it No select
+body
+    no-select()
+
+// @expects
+body{-webkit-touch-callout:none;user-select:none}
+
+
+// @it Offsets
+body
+    margin-horizontal: 10px
+    margin-h: 10px
+    margin-horizontal: 10px
+    margin-vertical: 10px
+    margin-v: 10px
+    margin-vertical: 10px
+    padding-horizontal: 10px
+    padding-h: 10px
+    padding-horizontal: 10px
+    padding-vertical: 10px
+    padding-v: 10px
+    padding-vertical: 10px
+
+// @expects
+body{margin-left:10px;
+    margin-right:10px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-top:10px;
+    padding-bottom:10px}
+
+
+// @it Visuallyhidden
+body
+    visuallyhidden()
+
+// @expects
+body{border:0!important;
+    clip:rect(0 0 0 0)!important;
+    height:1px!important;
+    margin:-1px!important;
+    overflow:hidden!important;
+    padding:0!important;
+    position:absolute!important;
+    width:1px!important}
+
+
+// @it Clear fix
+body
+    clear fix
+    clear both
+
+// @expects
+body:after,
+body:before{display:block;
+    display:table;
+    width:0;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+    content:""}
+body{zoom:1;clear:both}
+body:after{clear:both}
