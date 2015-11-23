@@ -1,320 +1,83 @@
-register-alias({
-    'dp':                             'display'
+alias-register({
+    'dp':            'display'
 
     // Text
-    'f':                        'font'
-    'f-family':                  'font-family'
-    'fs':                  'font-size'
-    'f-size':                  'font-size'
-    'fw':                  'font-weight'
-    'f-weight':                  'font-weight'
-    'f-stretch':                  'font-stretch'
-    'f-style':                  'font-style'
-    'f-variant':                  'font-variant'
-    'f-align':                   'text-align'
-    'f-align-last':                   'text-align-last'
-    'f-decoration':                   'text-decoration'
-    'f-indent':                   'text-indent'
-    'f-overflow':                   'text-overflow'
-    'f-shadow':                   'text-shadow'
-    'f-transform':                   'text-transform'
+    'f':             'font'
+    'f-family':      'font-family'
+    'fs':            'font-size'
+    'f-size':        'font-size'
+    'fw':            'font-weight'
+    'f-weight':      'font-weight'
+    'f-stretch':     'font-stretch'
+    'f-style':       'font-style'
+    'f-variant':     'font-variant'
+    'f-align':       'text-align'
+    'f-align-last':  'text-align-last'
+    'f-decoration':  'text-decoration'
+    'f-indent':      'text-indent'
+    'f-overflow':    'text-overflow'
+    'f-shadow':      'text-shadow'
+    'f-transform':   'text-transform'
+    'f-color':       'color'
 
-    'fh':               'line-height'
-    'f-height':               'line-height'
-    'th':               'line-height'
-    't-height':               'line-height'
-    'lh':               'line-height'
+    'fh':            'line-height'
+    'f-height':      'line-height'
 
-    't':                        'font'
-    't-family':                  'font-family'
-    'ts':                  'font-size'
-    't-size':                  'font-size'
-    'tw':                  'font-weight'
-    't-weight':                  'font-weight'
-    't-stretch':                  'font-stretch'
-    't-style':                  'font-style'
-    't-variant':                  'font-variant'
-    't-align':                   'text-align'
-    't-align-last':                   'text-align-last'
-    't-decoration':                   'text-decoration'
-    't-indent':                   'text-indent'
-    't-overflow':                   'text-overflow'
-    't-shadow':                   'text-shadow'
-    't-transform':                   'text-transform'
+    'lh':            'line-height'
+
+    'th':            'line-height'
+    't-height':      'line-height'
+
+    't':             'font'
+    't-family':      'font-family'
+    'ts':            'font-size'
+    't-size':        'font-size'
+    'tw':            'font-weight'
+    't-weight':      'font-weight'
+    't-stretch':     'font-stretch'
+    't-style':       'font-style'
+    't-variant':     'font-variant'
+    't-align':       'text-align'
+    't-align-last':  'text-align-last'
+    't-decoration':  'text-decoration'
+    't-indent':      'text-indent'
+    't-overflow':    'text-overflow'
+    't-shadow':      'text-shadow'
+    't-transform':   'text-transform'
+    't-color':       'color'
 
     // Offsets
-    'ma':                     'margin'
-    'mb':                     'margin-bottom'
-    'm-bottom':                     'margin-bottom'
-    'ml':                     'margin-left'
-    'm-left':                     'margin-left'
-    'mr':                     'margin-right'
-    'm-right':                     'margin-right'
-    'mt':                     'margin-top'
-    'm-top':                     'margin-top'
+    'ma':            'margin'
+    'mb':            'margin-bottom'
+    'm-bottom':      'margin-bottom'
+    'ml':            'margin-left'
+    'm-left':        'margin-left'
+    'mr':            'margin-right'
+    'm-right':       'margin-right'
+    'mt':            'margin-top'
+    'm-top':         'margin-top'
 
-    'pa':                     'padding'
-    'pb':                     'padding-bottom'
-    'p-bottom':                     'padding-bottom'
-    'pl':                     'padding-left'
-    'p-left':                     'padding-left'
-    'pr':                     'padding-right'
-    'p-right':                     'padding-right'
-    'pt':                     'padding-top'
-    'p-top':                     'padding-top'
+    'pa':            'padding'
+    'pb':            'padding-bottom'
+    'p-bottom':      'padding-bottom'
+    'pl':            'padding-left'
+    'p-left':        'padding-left'
+    'pr':            'padding-right'
+    'p-right':       'padding-right'
+    'pt':            'padding-top'
+    'p-top':         'padding-top'
 
     // Background
-    'bg':                         'background'
-    'bg-attach':                  'background-attachment'
-    'bg-attachment':              'background-attachment'
-    'bg-clip':                    'background-clip'
-    'bg-color':                   'background-color'
-    'bg-img':                     'background-image'
-    'bg-image':                   'background-image'
-    'bg-origin':                  'background-origin'
-    'bg-pos':                     'background-position'
-    'bg-position':                'background-position'
-    'bg-repeat':                  'background-repeat'
-    'bg-size':                    'background-size'
+    'bg':            'background'
+    'bg-attach':     'background-attachment'
+    'bg-attachment': 'background-attachment'
+    'bg-clip':       'background-clip'
+    'bg-color':      'background-color'
+    'bg-img':        'background-image'
+    'bg-image':      'background-image'
+    'bg-origin':     'background-origin'
+    'bg-pos':        'background-position'
+    'bg-position':   'background-position'
+    'bg-repeat':     'background-repeat'
+    'bg-size':       'background-size'
 })
-
-
-B
-
-    background
-    background-attachment
-    background-clip
-    background-color
-    background-image
-    background-origin
-    background-position
-    background-repeat
-    background-size
-    border
-    border-bottom
-    border-bottom-color
-    border-bottom-left-radius
-    border-bottom-right-radius
-    border-bottom-style
-    border-bottom-width
-    border-collapse
-    border-color
-    border-image
-    border-left
-    border-left-color
-    border-left-style
-    border-left-width
-    border-radius
-    border-right
-    border-right-color
-    border-right-style
-    border-right-width
-    border-spacing
-    border-style
-    border-top
-    border-top-color
-    border-top-left-radius
-    border-top-right-radius
-    border-top-style
-    border-top-width
-    border-width
-    bottom
-    box-shadow
-    box-sizing
-
-C
-
-    caption-side
-    clear
-    clip
-    color
-    column-count
-    column-gap
-    column-rule
-    column-width
-    columns
-    content
-    counter-increment
-    counter-reset
-    cursor
-
-D
-
-    direction
-    display
-
-E
-
-    empty-cells
-
-F
-
-    float
-    font
-    font-family
-    font-size
-    font-stretch
-    font-style
-    font-variant
-    font-weight
-
-H
-
-    height
-
-L
-
-    left
-    letter-spacing
-    line-height
-    list-style
-    list-style-image
-    list-style-position
-    list-style-type
-
-M
-
-    margin
-    margin-bottom
-    margin-left
-    margin-right
-    margin-top
-    max-height
-    max-width
-    min-height
-    min-width
-
-O
-
-    opacity
-    orphans
-    outline
-    outline-color
-    outline-offset
-    outline-style
-    outline-width
-    overflow
-    overflow-x
-    overflow-y
-
-P
-
-    padding
-    padding-bottom
-    padding-left
-    padding-right
-    padding-top
-    page-break-after
-    page-break-before
-    page-break-inside
-    position
-
-Q
-
-    quotes
-
-R
-
-    resize
-    right
-
-T
-
-    tab-size
-    table-layout
-    text-align
-    text-align-last
-    text-decoration
-    text-decoration-color
-    text-decoration-line
-    text-decoration-style
-    text-indent
-    text-overflow
-    text-shadow
-    text-transform
-    top
-    transform
-    transform-origin
-    transition
-    transition-delay
-    transition-duration
-    transition-property
-    transition-timing-function
-
-U
-
-    unicode-bidi
-
-V
-
-    vertical-align
-    visibility
-
-W
-
-    white-space
-    widows
-    width
-    word-break
-    word-spacing
-    word-wrap
-    writing-mode
-
-Z
-
-    z-index
-
-Вендорные свойства
-
-Эти свойства работают только в определённых браузерах. Префикс -moz- для Firefox, -ms- для Internet Explorer, -webkit- для Chrome и Safari, -o- для Opera.
-Interner Explorer
-
-    -ms-interpolation-mode
-    -ms-linear-gradient
-    -ms-radial-gradient
-    background-position-x
-    background-position-y
-    filter
-    hasLayout
-    scrollbar-3dlight-color
-    scrollbar-arrow-color
-    scrollbar-base-color
-    scrollbar-darkshadow-color
-    scrollbar-face-color
-    scrollbar-highlight-color
-    scrollbar-shadow-color
-    scrollbar-track-color
-    zoom
-
-Firefox
-
-    -moz-border-bottom-colors
-    -moz-border-left-colors
-    -moz-border-right-colors
-    -moz-border-top-colors
-    -moz-linear-gradient
-    -moz-orient
-    -moz-radial-gradient
-    -moz-user-select
-    :-moz-placeholder
-    ::-moz-selection
-    image-rendering
-
-Opera
-
-    -o-linear-gradient
-    -o-object-fit
-    -o-radial-gradient
-
-Safari и Chrome
-
-    -webkit-linear-gradient
-    -webkit-radial-gradient
-    -webkit-user-select
-
-@-правила
-
-    @charset
-    @font-face
-    @import
-    @media

@@ -1,7 +1,7 @@
 // @describe Alias
 
 // @it Register
-register-alias({
+alias-register({
     'clr': 'color'
 })
 
@@ -12,3 +12,14 @@ body
 body{color:#000}
 
 
+// @it Built in
+// Some, not all of them
+
+body
+    f 10px
+    ml 20px
+    mr 10px
+    bg-attach fixed
+
+// @expects
+body{font:10px;margin-left:20px;margin-right:10px;background-attachment:fixed}

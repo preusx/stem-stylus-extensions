@@ -36,3 +36,16 @@
 
 // @expects
 .body{font-size:10px;font-family:arial;prefix-font-size:10px;prefix-font-family:arial}
+
+
+// @it Interpolation: aliases and mixins[TODO]
+f-kind()
+    font-style arguments
+
+body
+    @p f
+        family Arial
+        kind italic
+
+// @expects
+body{font-family:Arial}
