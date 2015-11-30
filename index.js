@@ -8,6 +8,7 @@ var plugin = function(){
 
       'functions/str',
       'functions/math',
+      'functions/scale',
       'functions/iurl',
 
       'functions/type',
