@@ -1,95 +1,95 @@
 // @describe Scale
 
 // @it Geometric progression
-a = scale-geometric-progression(.5, 3, 2)
-b = scale-modular(.5, 3, 2)
+a = scale-geometric-progression(.5, 3rem, 2)
+b = scale-modular(.5, 3rem, 2)
 
 body
     val: a, b, a == b
 
 // @expects
-body{val:2,2,true}
+body{val:2rem,2rem,true}
 
 
 // @it Geometric progression ::: reverse
-a = scale-geometric-progression(.5, 3, 2)
+a = scale-geometric-progression(.5, 3rem, 2)
 b = scale-geometric-progression_reverse(.5, a, 2)
 
 body
     val: a, b, b == 3
 
 // @expects
-body{val:2,3,true}
+body{val:2rem,3rem,true}
 
 
 // @it Arithmetic progression
-a = scale-arithmetic-progression(.5, 3, 2)
-b = scale-arithmetic-progression(.5, 3)
+a = scale-arithmetic-progression(.5, 3rem, 2)
+b = scale-arithmetic-progression(.5, 3rem)
 
 body
     val: a, b
 
 // @expects
-body{val:4.5, 1.5}
+body{val:4.5rem, 1.5rem}
 
 
 // @it Arithmetic progression ::: reverse
-a = scale-arithmetic-progression(.5, 3, 2)
+a = scale-arithmetic-progression(.5, 3rem, 2)
 b = scale-arithmetic-progression_reverse(.5, a, 2)
 
 body
     val: a, b, b == 3
 
 // @expects
-body{val:4.5,3,true}
+body{val:4.5rem,3rem,true}
 
 
 // @it Exponential growth
-a = scale-exponential-growth(.5, 3, 2)
+a = scale-exponential-growth(.5, 3rem, 2)
 
 body
     val: a
 
 // @expects
-body{val:13.5}
+body{val:13.5rem}
 
 
 // @it Exponential growth ::: reverse
-a = scale-exponential-growth(.5, 3, 2)
+a = scale-exponential-growth(.5, 3rem, 2)
 b = scale-exponential-growth_reverse(.5, a, 2)
 
 body
     val: a, b, b == 3
 
 // @expects
-body{val:13.5,3,true}
+body{val:13.5rem,3rem,true}
 
 
 // @it Expotential
-a = scale-expotential(.5, 3, 2)
+a = scale-expotential(.5, 3rem, 2)
 
 body
     val: a
 
 // @expects
-body{val:201.71439674636753}
+body{val:201.71439674636753rem}
 
 
 // @it Expotential ::: reverse
-a = scale-expotential(.5, 3, 2)
+a = scale-expotential(.5, 3rem, 2)
 b = scale-expotential_reverse(.5, a, 2)
 
 body
     val: a, b, b == 3
 
 // @expects
-body{val:201.71439674636753,3,true}
+body{val:201.71439674636753rem,3rem,true}
 
 
 // @it Qubic(no reverse)
 body
-    val: scale-qubic(1,1,1,1,5)
+    val: scale-qubic(1,1,1,1,5em)
 
 
 // @expects
-body{val:156}
+body{val:156em}
