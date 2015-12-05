@@ -3,12 +3,13 @@
 // @it Geometric progression
 a = scale-geometric-progression(.5, 3rem, 2)
 b = scale-modular(.5, 3rem, 2)
+c = scale-modular_reverse(.5, b, 2)
 
 body
-    val: a, b, a == b
+    val: a, b, c, a == b
 
 // @expects
-body{val:2rem,2rem,true}
+body{val:2rem,2rem,3rem,true}
 
 
 // @it Geometric progression ::: reverse
