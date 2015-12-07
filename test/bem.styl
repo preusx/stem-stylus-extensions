@@ -79,3 +79,22 @@
 .is-helper{color:#fff}
 .block.is-state{color:#ff0}
 .block.is-helper{color:#fff}
+
+
+// @it Selector parts
+@b block
+    @m
+        &helper
+            for key, val in bem-selector-parts()
+                {key} val
+
+// @expects
+.block--helper{block:'block';mod:'helper'}
+
+
+// @it Compose
+@b {bem-compose('block', , , 'pr')}
+    block: true
+
+// @expects
+.pr-block{block:true}
