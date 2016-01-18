@@ -81,6 +81,22 @@
 .block.is-helper{color:#fff}
 
 
+// @it Nested block
+
+@b block
+    color #000
+
+    @m modifed
+        @bn
+            @e
+                &nested
+                    color #000
+
+// @expects
+.block{color:#000}
+.block--modifed .block__nested{color:#000}
+
+
 // @it Selector parts
 @b block
     @m
