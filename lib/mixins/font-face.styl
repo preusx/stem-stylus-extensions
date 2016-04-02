@@ -19,24 +19,19 @@ font-face(name, path, type='regular', formats=('woff'))
 
     // Gathering the src value
     if 'otf' in formats
-        push(source, "url('" + path +\
-            "/" + type + ".otf') format('opentype')")
+        push(source, iurl(path+"/"+type + ".otf") + " format('opentype')")
 
     if 'ttf' in formats
-        push(source, "url('" + path +\
-            "/" + type + ".ttf') format('truetype')")
+        push(source, iurl(path+"/"+type + ".ttf") + " format('truetype')")
 
     if 'svg' in formats
-        push(source, "url('" + path +\
-            "/" + type + ".svg#svg" + name + "') format('svg')")
+        push(source, iurl(path+"/"+type + ".svg#svg" + name) + " format('svg')")
 
     if 'woff' in formats
-        push(source, "url('" + path +\
-            "/" + type + ".woff') format('woff')")
+        push(source, iurl(path+"/"+type + ".woff") + " format('woff')")
 
     if 'woff2' in formats
-        push(source, "url('" + path +\
-            "/" + type + ".woff2') format('woff2')")
+        push(source, iurl(path+"/"+type + ".woff2") + " format('woff2')")
 
     shift(source)
 
