@@ -10,19 +10,19 @@ PI              ?= 3.141592653589793
 ie              ?= false
 
 Path            = extend({
-        font: '../font/'
-        img:  '../img/'
-    }, Path)
+  font: '../font/'
+  img:  '../img/'
+}, Path)
 
 Base            = extend({
-        font-size: 16px
-    }, Base)
+  font-size: 16px
+}, Base)
 
 
 BEM = {}
 bem-config()
 
 to-config({
-    DPI: DPI,
-    base: Base.font-size
+  DPI: DPI,
+  base: Base.font-size
 })

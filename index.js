@@ -1,10 +1,10 @@
 var plugin = function(){
   return function(style){
     require('./lib/loader.js')(style, [
-      'at-rules/property-prefix',
+      // 'at-rules/property-prefix',
       'at-rules/bem',
 
-      'functions/timer',
+      // 'functions/timer',
 
       'functions/str',
       'functions/math',
