@@ -1,164 +1,36 @@
-/**
- * Mixins
- * ======================================================================== */
-
-/*
- * Size mixin
- *
- * size: 20px 10px => width: 20px; height: 10px
- */
-size(width, height=width)
-    if is-list(width)
-        width width[0]
-        height width[1]
-    else
-        width width
-        height height
-
-
-/*
- * Position helpers
- */
--pos(type, args)
-    position: unquote(type)
-
-    positions = ('top' 'right' 'bottom' 'left')
-
-    for i in 0..3
-        if args[i] != null && args[i] != '_'
-            {positions[i]}: args[i]
-
-
-absolute()
-    -pos('absolute', arguments)
-
-
-relative()
-    -pos('relative', arguments)
-
-
-fixed()
-    -pos('fixed', arguments)
-
-
-static()
-    -pos('static', arguments)
-
-
-/*
- * Make single text line overflow
- *
- * text-overflow: 200 ellipsis
- */
-// text-overflow(type='ellipsis')
-//     text-overflow unquote(type)
-//     white-space nowrap
-//     overflow hidden
-
-
 /*
  * Disallow user to select element
  * e.g. no-select()
  */
 no-select()
-    -webkit-touch-callout none
-    user-select none
-
-
-/**
- * Margin and padding shortcuts
- */
-margin-horizontal(left, right=left)
-    margin-left left
-    margin-right right
-
-
-margin-vertical(top, bottom=top)
-    margin-top top
-    margin-bottom bottom
-
-
-padding-horizontal(left, right=left)
-    padding-left left
-    padding-right right
-
-
-padding-vertical(top, bottom=top)
-    padding-top top
-    padding-bottom bottom
-
-
-alias-register({
-    'margin-h':          'margin-horizontal'
-    'mh':                'margin-horizontal'
-    'm-hor':             'margin-horizontal'
-    'm-horizontal':      'margin-horizontal'
-    'margin-v':          'margin-vertical'
-    'mv':                'margin-vertical'
-    'm-ver':             'margin-vertical'
-    'm-vertical':        'margin-vertical'
-
-    'padding-h':         'padding-horizontal'
-    'ph':                'padding-horizontal'
-    'p-hor':             'padding-horizontal'
-    'p-horizontal':      'padding-horizontal'
-    'padding-v':         'padding-vertical'
-    'pv':                'padding-vertical'
-    'p-ver':             'padding-vertical'
-    'p-vertical':        'padding-vertical'
-})
-
+  -webkit-touch-callout none
+  user-select none
 
 
 /**
  * Hide the element
  */
 visuallyhidden()
-    border 0 !important
-    clip rect(0 0 0 0) !important
-    height 1px !important
-    margin -1px !important
-    overflow hidden !important
-    padding 0 !important
-    position absolute !important
-    width 1px !important
+  border 0 !important
+  clip rect(0 0 0 0) !important
+  height 1px !important
+  margin -1px !important
+  overflow hidden !important
+  padding 0 !important
+  position absolute !important
+  width 1px !important
 
 
-/**
- * Clear fix
+/*
+ * Text selection mixin
+ * e.g. text-selection(#F80, #EEE)
  */
-$__clear-fix__before
-    display block
-    display table
-    width 0
-    height 0
-    overflow hidden
-    visibility hidden
+text-selection($highlight, $textColor = null)
+  $textColor = #fff unless $textColor
 
-    content ""
-
-clear(type)
-    if type == 'fix'
-        zoom 1
-
-        &:before
-        &:after
-            @extends $__clear-fix__before
-
-        &:after
-            clear both
-    else
-        clear type
-
-
-
-/**
- * Placeholders
- * ======================================================================== */
-
-$visuallyhidden
-    visuallyhidden()
-
-
-$clearfix
-    clear fix
+  ::-moz-selection
+    background: $highlight
+    color: $textColor
+  ::selection
+    background: $highlight
+    color: $textColor
