@@ -6,319 +6,258 @@
  * Global border-box mixin best-practice
  */
 border-box()
-    sl = selector('&') ? '&' : 'html'
+  sl = selector('&') ? '&' : 'html'
 
-    {sl}
-        box-sizing border-box
+  {sl}
+    box-sizing border-box
 
-    *
-    *:before
-    *:after
-        box-sizing inherit
+  *
+  *:before
+  *:after
+    box-sizing inherit
 
-    img
-        box-sizing content-box
+  img
+    box-sizing content-box
+
+
+fluid-media()
+  img,
+  video,
+  iframe
+    max-width: 100%
+    height: auto
+    border: 0
+    -ms-interpolation-mode: bicubic
+    display: block
 
 
 /**
  * RESET
  * Full reset (recommended)
  */
-reset-blank()
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, font, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    dl, dt, dd, ol, ul, li, input, textarea,
-    fieldset, form, label, legend, button,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section, summary
-        margin 0
-        padding 0
-        border 0
-        outline 0
-        font-weight inherit
-        font-style inherit
-        font-size 100%
-        font-family inherit
-        vertical-align middle
+reset-global()
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td
+    reset-box-model()
+    reset-font()
+  body
+    reset-body()
+  ol, ul
+    list-style: none
+  table
+    reset-table()
+  caption, th, td
+    reset-table-cell()
+  a img
+    border: none
 
-    article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section, summary
-        display block
+reset-nested()
+  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+  pre, a, abbr, acronym, address, code, del, dfn, em, img,
+  dl, dt, dd, ol, ul, li, fieldset, form, label,
+  legend, caption, tbody, tfoot, thead, tr
+    reset-box-model()
+    reset-font()
+  table
+    reset-table()
+  caption, th, td
+    reset-table-cell()
+  a img
+    border: none
 
-    ol, ul
-        list-style none
+reset-box-model()
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
 
-    table
-        border-collapse separate
-        border-spacing 0
-        vertical-align middle
+reset-font()
+  font-weight: inherit
+  font-style: inherit
+  font-family: inherit
+  font-size: 100%
+  vertical-align: baseline
 
-    caption, th, td
-        text-align left
-        font-weight normal
-        vertical-align middle
+reset-body()
+  line-height: 1
+  color: black
+  background: white
 
-    blockquote, q
-        quotes "&#8220;" "&#8221;"
+reset-table()
+  border-collapse: separate
+  border-spacing: 0
+  vertical-align: middle
 
-    a img
-        border none
+reset-table-cell()
+  text-align: left
+  font-weight: normal
+  vertical-align: middle
 
-    abbr[title]
-    dfn[title]
-        cursor help
-
-    label,
-    button,
-    a
-        cursor pointer
-
-    table,
-    thead,
-    tbody,
-    tfoot,
-    caption,
-    tr,
-    th,
-    td
-        font-family inherit
-        font-size inherit
-        line-height inherit
-        text-decoration inherit
-
-    fieldset,
-    img,
-    iframe
-        border 0
-
-    img,
-    canvas,
-    iframe,
-    video,
-    svg
-        max-width 100%
-
-    caption,
-    th
-        text-align left
-
-    html,
-    body
-        -webkit-font-smoothing antialiased
-        -webkit-text-size-adjust 100%
-        -ms-text-size-adjust 100%
-        font-size-adjust auto
-
-    input[type="date"]
-    input[type="datetime"]
-    input[type="datetime-local"]
-    input[type="email"]
-    input[type="number"]
-    input[type="search"]
-    input[type="tel"]
-    input[type="time"]
-    input[type="url"]
-    input[type="month"]
-    input[type="week"]
-    input[type="text"]
-    input[type="password"]
-    input[type="reset"]
-    input[type="submit"]
-    input[type="button"]
-    button
-        background transparent
+reset-html5()
+  article, aside, canvas, details, figcaption,
+  figure, footer, header, hgroup, menu, nav,
+  section, summary, main
+    reset-box-model()
+    display: block
+  audio, canvas, video
+    display inline-block
+    *display inline
+    *zoom 1
+  audio:not([controls]),[hidden]
+    display none
 
 
-/**
- * Mixin: Normalize CSS
- *
- * Based on v3.0.2 https://github.com/necolas/normalize.css
- * MIT License
- */
+// Mixin: Normalize CSS
+// Based on v4.0.0 https://github.com/necolas/normalize.css
 reset-normalize()
-    html
-        font-family sans-serif
-        -ms-text-size-adjust 100%
-        -webkit-text-size-adjust 100%
+  html
+    font-family: sans-serif
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
 
-    body
-        margin 0
+  body
+    margin 0
 
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    main,
-    menu,
-    nav,
-    section,
-    summary
-        display block
+  article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary
+    display: block
 
-    audio,
-    canvas,
-    progress,
-    video
-        display inline-block
-        vertical-align baseline
+  audio, canvas, progress, video
+    display: inline-block
 
-    audio:not([controls])
-        display none
-        height 0
+  audio:not([controls])
+    display: none
+    height: 0
 
-    [hidden],
-    template
-        display none
+  progress
+    vertical-align: baseline
 
-    a
-        background-color transparent
+  template, [hidden]
+    display: none
 
-        &:active,
-        &:hover
-            outline 0
+  a
+    background-color: transparent
 
-    abbr[title]
-        border-bottom 1px dotted
+  a:active, a:hover
+    outline-width: 0
 
-    b,
-    strong
-        font-weight bold
+  abbr[title]
+    border-bottom: none
+    text-decoration: underline
+    text-decoration: underline dotted
 
-    dfn
-        font-style italic
+  b, strong
+    font-weight: inherit
 
-    h1
-        font-size 2em
-        margin 0.67em 0
+  dfn
+    font-style: italic
 
-    mark
-        background #ff0
-        color #000
+  h1
+    font-size: 2em
+    margin: 0.67em 0
 
-    small
-        font-size 80%
+  mark
+    background-color: #ff0
+    color: #000
 
-    sub,
-    sup
-        font-size 75%
-        line-height 0
-        position relative
-        vertical-align baseline
+  small
+    font-size: 80%
 
-    sup
-        top -0.5em
+  sub, sup
+    font-size: 75%
+    line-height: 0
+    position: relative
+    vertical-align: baseline
 
-    sub
-        bottom -0.25em
+  sub
+    bottom: -0.25em
 
-    img
-        border 0
+  sup
+    top: -0.5em
 
-    svg:not(:root)
-        overflow hidden
+  img
+    border-style: none
 
-    figure
-        margin 1em 40px
+  svg:not(:root)
+    overflow: hidden
 
-    hr
-        -moz-box-sizing content-box
-        box-sizing content-box
-        height 0
+  code, kbd, pre, samp
+    font-family: monospace, monospace
+    font-size: 1em
 
-    pre
-        overflow auto
+  figure
+    margin: 1em 40px
 
-    code,
-    kbd,
-    pre,
-    samp
-        font-family monospace, monospace
-        font-size 1em
+  hr
+    box-sizing: content-box
+    height: 0
+    overflow: visible
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea
-        color inherit
-        font inherit
-        margin 0
+  button, input, select, textarea
+    font: inherit
 
-    button
-        overflow visible
+  optgroup
+    font-weight: bold
 
-    button,
-    select
-        text-transform none
+  button, input, select
+    overflow: visible
 
-    button,
-    html input[type="button"],
-    input[type="reset"],
-    input[type="submit"]
-        -webkit-appearance button
-        cursor pointer
+  button, input, select, textarea
+    margin: 0
 
-    button[disabled],
-    html input[disabled]
-        cursor default
+  button, select
+    text-transform: none
 
-    button::-moz-focus-inner,
-    input::-moz-focus-inner
-        border 0
-        padding 0
+  button, [type="button"], [type="reset"], [type="submit"]
+    cursor: pointer
 
-    input
-        line-height normal
+  [disabled]
+    cursor: default
 
-    input[type="checkbox"],
-    input[type="radio"]
-        box-sizing border-box
-        padding 0
+  button, html [type="button"], [type="reset"], [type="submit"]
+    -webkit-appearance: button
 
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button
-        height auto
+  button::-moz-focus-inner, input::-moz-focus-inner
+    border: 0
+    padding: 0
 
-    input[type="search"]
-        -webkit-appearance textfield
-        -moz-box-sizing content-box
-        -webkit-box-sizing content-box
-        box-sizing content-box
+  button:-moz-focusring, input:-moz-focusring
+    outline: 1px dotted ButtonText
 
-    input[type="search"]::-webkit-search-cancel-button,
-    input[type="search"]::-webkit-search-decoration
-        -webkit-appearance none
+  fieldset
+    border: 1px solid #c0c0c0
+    margin: 0 2px
+    padding: 0.35em 0.625em 0.75em
 
-    fieldset
-        border 1px solid #c0c0c0
-        margin 0 2px
-        padding 0.35em 0.625em 0.75em
+  legend
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    color: inherit
+    display: table
+    max-width: 100%
+    padding: 0
+    white-space: normal
 
-    legend
-        border 0
-        padding 0
+  textarea
+    overflow: auto
 
-    textarea
-        overflow auto
+  [type="checkbox"], [type="radio"]
+    box-sizing: border-box
+    padding: 0
 
-    optgroup
-        font-weight bold
+  [type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button
+    height: auto
 
-    table
-        border-collapse collapse
-        border-spacing 0
+  [type="search"]
+    -webkit-appearance: textfield
 
-    td,
-    th
-        padding 0
+  [type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration
+    -webkit-appearance: none
 
 
 /**
@@ -326,19 +265,144 @@ reset-normalize()
  * (borders on required etc.)
  */
 reset-fields()
-    ::valid
-    ::invalid,
-    ::required,
-    ::optional,
-    ::in-range,
-    ::out-of-range
-        background: none
-        border: 0
-        box-shadow: none
+  ::valid
+  ::invalid,
+  ::required,
+  ::optional,
+  ::in-range,
+  ::out-of-range
+    background: none
+    border: 0
+    box-shadow: none
 
-    ::-moz-focus-inner
-        border:0
+  ::-moz-focus-inner
+    border:0
 
-    ::-ms-clear,
-    ::-ms-reveal
-        display: none
+  ::-ms-clear,
+  ::-ms-reveal
+    display: none
+
+
+print-styles()
+  @media print
+    body
+      width: 100% !important
+      margin: 0 !important
+      padding: 0 !important
+      font-size: 14pt
+      line-height: 1.45
+      font-family: Garamond, "Times New Roman", serif
+      color: #000
+      background: none
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+      page-break-after: avoid
+      font-family: "Helvetica", Arial, sans-serif
+
+    h1
+      font-size: 36pt
+      line-height: 1.25em
+
+    h2
+      font-size: 24pt
+      line-height: 1.25em
+
+    h3
+      font-size: 18pt
+      line-height: 1.25em
+
+    h4,
+    h5,
+    h6
+      font-size: 14pt
+      line-height: 1.25em
+
+    p,
+    h2,
+    h3
+      orphans: 3
+      widows: 3
+
+    code
+      font: 12pt Courier, $monospace
+
+    blockquote
+      margin: 1.2em
+      padding: 1em
+      font-size: 24pt
+      line-height: 1.45833333em
+      font-style: italic
+
+    hr
+      background-color: #ccc
+
+    img
+      float: left
+      margin: 1em 1.5em 1.5em 0
+      max-width: 100% !important
+
+    a img
+        border: none
+
+    a:link,
+    a:visited
+      background: transparent
+      font-weight: 700
+      text-decoration: underline
+      color: #333
+
+    a:link[href^="http://"]:after,
+    a[href^="http://"]:visited:after
+      content: " (" attr(href) ") "
+      font-size: 90%
+
+    abbr[title]:after
+      content: " (" attr(title) ")"
+
+    a[href^="http://"]
+      color: #000
+
+    a[href$=".jpg"]:after,
+    a[href$=".jpeg"]:after,
+    a[href$=".gif"]:after,
+    a[href$=".png"]:after
+      content: " (" attr(href) ") "
+      display: none
+
+    a[href^="#"]:after, a[href^="javascript:"]:after
+      content: ""
+
+    table
+      margin: 1px
+      text-align: left
+
+    th
+      border-bottom: 1px solid #333
+      font-weight: bold
+
+    td
+      border-bottom: 1px solid #333
+
+    th,
+    td
+      padding: 4px 10px 4px 0
+
+    tfoot
+      font-style: italic
+
+    caption
+      background: #fff
+      margin-bottom: 2em
+      text-align: left
+
+    thead
+      display: table-header-group
+
+    img,
+    tr
+      page-break-inside: avoid
